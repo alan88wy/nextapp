@@ -1,6 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
-
-module.exports = nextConfig
+module.exports = {
+    images: {
+      loader: 'custom'
+    },
+    exportPathMap: async function (
+        defaultPathMap,
+      ) {
+        return {
+          '/': { page: '/' },
+          '/about': { page: '/about' },
+        }
+      },
+  }
